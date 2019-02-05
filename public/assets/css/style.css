@@ -9,7 +9,7 @@ html {
   }
   
   .card a:not([href]):not([tabindex]).scrape-new {
-    color: #2196F3;
+    color: #3cb371;
   }
   
   .footer {
@@ -18,7 +18,7 @@ html {
     width: 100%;
     height: 80px;
     color: white;
-    background-color: #2196f3;
+    background-color: #3cb371;
   }
   
   .navbar {
@@ -31,7 +31,7 @@ html {
     height: 500px;
     padding: 0;
     font-family: "Cormorant SC";
-    box-shadow: 10px 5px 20px 2px lightslategrey;
+    box-shadow: 10px 5px 20px 2px #ffe4e1;
   }
   
   .jumbotron .overlay {
@@ -41,7 +41,7 @@ html {
     bottom: 0;
     left: 0;
     z-index: auto;
-    background: linear-gradient(#333, black);
+    background: linear-gradient(#ffe4e1, black);
     opacity: 0.7;
   }
   
@@ -83,7 +83,7 @@ html {
   }
   
   .card .card-header {
-    background-color: #2196f3;
+    background-color: #3cb371;
     position: relative;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -123,7 +123,7 @@ html {
     padding-left: 10px;
     margin: 0;
     font-weight: 800;
-    background: #0c7cd5;
+    background: #3cb371;
   }
   
   .navbar-nav > li > a.scrape-new,

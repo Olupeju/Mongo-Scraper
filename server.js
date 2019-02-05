@@ -32,8 +32,5 @@ require('./routes/apiRoutes')(app)
 // Start the server
 app.listen(PORT, function() {
     console.log("App runing on port" + PORT);
-    //   "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-    //   PORT,
-    //   PORT
     
   });
