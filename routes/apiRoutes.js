@@ -8,23 +8,23 @@ const db = require("../models");
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
-module.exports = function (app) {
+module.exports = (app)=>{
   // home page
-  app.get('/', function (req, res) {
+  app.get('/', (req, res)=>{
     db.Article.find({saved: false}, function(err, data){
       res.render('home', { home: true, article : data });
     })
   });
 
   // saved pages
-  app.get('/saved', function (req, res) {
-    db.Article.find({saved: true}, function(err, data){
+  app.get('/saved', (req, res)=>{
+    db.Article.find({saved: true}, (err, data)=>{
       res.render('saved', { home: false, article : data });
     })
   });
 
   // save article to database by changed saved field to true
-  app.put("/api/headlines/:id", function(req, res){
+  app.put("/api/headlines/:id", (req, res)=>{
     var saved = req.body.saved == 'true'
     if(saved){
       db.Article.updateOne({_id: req.body._id},{$set: {saved:true}}, function(err, result){
@@ -119,9 +119,11 @@ module.exports = function (app) {
     })
     .then(function(dbArticle){
       console.log('dbArticle:'+dbArticle)
+       // If we were able to successfully update an Article, send it back to the client
       res.json(dbArticle)
     })
     .catch(function(err){
+        // If an error occurred, send it to the client
       res.json(err);
     })
   });

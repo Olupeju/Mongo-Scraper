@@ -1,5 +1,5 @@
 /* global bootbox */
-$(document).ready(function() {
+$(document).ready(()=>{
     // Getting a reference to the article container div we will be rendering all articles inside of
     var articleContainer = $(".article-container");
     // Adding event listeners for dynamically generated buttons for deleting articles,
@@ -12,13 +12,13 @@ $(document).ready(function() {
   
     function initPage() {
       // Empty the article container, run an AJAX request for any saved headlines
-      $.get("/api/headlines?saved=true").then(function(data) {
+      $.get("/api/headlines?saved=true").then((data)=>{
         articleContainer.empty();
         // If we have headlines, render them to the page
         if (data && data.length) {
           renderArticles(data);
         } else {
-          // Otherwise render a message explaining we have no articles
+          // If we do not have headlines render a message explaining we have no articles
           renderEmpty();
         }
       });
@@ -145,7 +145,7 @@ $(document).ready(function() {
         .data();
       console.log(currentArticle)
       // Grab any notes with this headline/article id
-      $.get("/api/notes/" + currentArticle._id).then(function(data) {
+      $.get("/api/notes/" + currentArticle._id).then((data)=>{
         console.log(data)
         // Constructing our initial HTML to add to the notes modal
         var modalText = $("<div class='container-fluid text-center'>").append(
@@ -186,7 +186,7 @@ $(document).ready(function() {
       // and post it to the "/api/notes" route and send the formatted noteData as well
       if (newNote) {
         noteData = { _headlineId: $(this).data("article")._id, noteText: newNote };
-        $.post("/api/notes", noteData).then(function() {
+        $.post("/api/notes", noteData).then(()=>{
           // When complete, close the modal
           bootbox.hideAll();
         });
