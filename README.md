@@ -7,3 +7,5 @@ The user can save the article by clicking on Save Article button. The saved arti
 A note can be created in the saved article by clicking on Create Notes button. Once the button is clicked a modal will get displayed for the user to create a note. As many number of notes can be created for a particular article, and the note is displayed for all the users who wants to view the note. A note can be deleted by clicking on the delte button on the side of the note.
 
 <img src="images/image3.PNG" width = 400>
+
+<img src="images/images4.PNG" width = 400>
